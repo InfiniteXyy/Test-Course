@@ -10,17 +10,18 @@ public class CityClockTest {
 
   private CityClock cityClock;
 
+  private PhoneClock phoneClock;
+
   @Before
   public void setUp() throws Exception {
-    cityClock = new CityClock(1, "Test");
+    cityClock = new CityClock(5, "Test");
+    phoneClock = new PhoneClock(1);
   }
 
   @Test
-  public void getTime() {
-    assertEquals(1, cityClock.getTime());
-    Clock.setUTCTime(1);
-    assertEquals(2, cityClock.getTime());
-
+  public void test_city_time_should_be_5_after_set_phone_clock_to_0() {
+    phoneClock.setTime(0);
+    assertEquals(4, cityClock.getTime());
   }
 
   @Test

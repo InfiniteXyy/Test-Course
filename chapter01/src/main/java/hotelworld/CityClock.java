@@ -11,6 +11,10 @@ class CityClock {
     this.city = city;
   }
 
+  public String getCity() {
+    return city;
+  }
+
   public int getOffset() {
     return offset;
   }

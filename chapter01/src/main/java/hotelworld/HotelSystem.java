@@ -3,13 +3,23 @@ package hotelworld;
 import java.util.ArrayList;
 import java.util.List;
 
-class HotelSystem {
+public class HotelSystem {
 
   private int standardTime;
 
   private List<CityClock> clocks;
 
-  HotelSystem() {
+  public static HotelSystem newDemoInstance() {
+    HotelSystem hotelSystem = new HotelSystem();
+    hotelSystem.pushClock(new CityClock(0, "London"));
+    hotelSystem.pushClock(new CityClock(4, "Moscow"));
+    hotelSystem.pushClock(new CityClock(8, "Beijing"));
+    hotelSystem.pushClock(new CityClock(10, "Sydney"));
+    hotelSystem.pushClock(new CityClock(-5, "New York"));
+    return hotelSystem;
+  }
+
+  public HotelSystem() {
     this.clocks = new ArrayList<>();
     this.standardTime = 0;
   }
@@ -24,6 +34,14 @@ class HotelSystem {
       int localtime = standardTime + cityClock.getOffset();
       cityClock.setLocaltime((localtime + 24) % 24);
     }
+  }
+
+  public int getStandardTime() {
+    return standardTime;
+  }
+
+  public List<CityClock> getClocks() {
+    return clocks;
   }
 
   public String getDetail() {

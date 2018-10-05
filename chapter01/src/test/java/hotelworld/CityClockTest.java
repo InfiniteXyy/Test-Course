@@ -13,7 +13,7 @@ public class CityClockTest {
   private PhoneClock phoneClock;
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
     cityClock = new CityClock(5, "Test");
     phoneClock = new PhoneClock(1);
   }

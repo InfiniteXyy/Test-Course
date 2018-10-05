@@ -8,4 +8,23 @@
 - REQ3: 将酒店大堂服务员的智能手机时间设置为北京时间
 - REQ4: 若大堂墙壁上所有城市的时钟都或多或少有些走时不准，需要调整时间时，只需调准服务员手机的时间，那么墙上5个城市的时钟时间都能够相应地自动调整准确
 
-## 类图
+
+## 静态分析报告
+- 工具 `sonarLint`
+- 解决的问题
+  - Standard outputs should not be used directly to log anything
+    - 使用 `util.logging.Logger` 代替 `System.out.println`
+    - 将输出仅仅放在 `Main` 中，其它地方用 `return String`
+  - Generic exceptions should never be thrown
+    - 考虑到可能会有手机未绑定到 `HotelSystem` 时调整时间的情况，需要抛出异常
+    - 用继承实现自己的 `NotBindingException`
+- 截图
+  - **before**
+  
+  ![before lint](https://raw.githubusercontent.com/infiniteXyy/Test-Course-Projects/master/chapter01/assets/before_lint.png)
+  - **after**
+  
+  ![after lint](https://raw.githubusercontent.com/infiniteXyy/Test-Course-Projects/master/chapter01/assets/after_lint.png)
+
+  
+  

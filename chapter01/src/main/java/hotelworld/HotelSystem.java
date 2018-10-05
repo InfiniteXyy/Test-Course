@@ -1,36 +1,40 @@
 package hotelworld;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author xuyiyang
- */
 class HotelSystem {
 
+  private int standardTime;
+
   private List<CityClock> clocks;
-  private PhoneClock phoneClock = new PhoneClock(8);
 
   HotelSystem() {
-    this.clocks = Arrays.asList(
-        new CityClock(0, "London"),
-        new CityClock(8, "Beijing"),
-        new CityClock(4, "Moscow"),
-        new CityClock(10, "Sydney"),
-        new CityClock(-5, "New York")
-    );
+    this.clocks = new ArrayList<>();
+    this.standardTime = 0;
   }
 
-  void start() {
-    for (CityClock cityClock : clocks) {
-      System.out.println(cityClock);
-    }
-    phoneClock.setTime(9);
-
-    for (CityClock cityClock : clocks) {
-      System.out.println(cityClock);
-    }
-
+  public void pushClock(CityClock cityClock) {
+    this.clocks.add(cityClock);
   }
 
+  public void setStandardTime(int time) {
+    standardTime = time;
+    for (CityClock cityClock : clocks) {
+      int localtime = standardTime + cityClock.getOffset();
+      cityClock.setLocaltime((localtime + 24) % 24);
+    }
+  }
+
+  public String getDetail() {
+    StringBuilder output = new StringBuilder();
+    output.append("::HAHA Hotel::\n");
+    output.append(String.format("::%d city clocks::", clocks.size()));
+    output.append("\n");
+    for (int i = 0; i < clocks.size(); i++) {
+      output.append(String.format("%d: %s", (i + 1), clocks.get(i)));
+      output.append("\n");
+    }
+    return output.toString();
+  }
 }

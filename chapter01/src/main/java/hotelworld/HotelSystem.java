@@ -44,7 +44,7 @@ public class HotelSystem {
     return clocks;
   }
 
-  public String getDetail() {
+  public String getAllClocksDetail() {
     StringBuilder output = new StringBuilder();
     output.append("::HAHA Hotel::\n");
     output.append(String.format("::%d city clocks::", clocks.size()));

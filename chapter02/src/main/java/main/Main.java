@@ -1,14 +1,14 @@
+package main;
+
 import java.util.Scanner;
 
 public class Main {
 
   public static void main(String[] args) {
     Main main = new Main();
-    Scanner scanner = new Scanner(System.in);
-    char[] bools = getBools(scanner);
-    boolean op1 = bools[0] == '1';
-    boolean op2 = bools[1] == '1';
-    boolean op3 = bools[2] == '1';
+    boolean op1 = true;
+    boolean op2 = false;
+    boolean op3 = false;
     System.out.println(main.usualLogic(op1, op2, op3));
     System.out.println(main.unUsualLogic(op1, op2, op3));
     System.out.println(main.nestedLogic(op1, op2, op3));

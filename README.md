@@ -4,6 +4,6 @@ HotelClock(Hello JUnit) [传送门](https://github.com/InfiniteXyy/Test-Course-P
 
 coverage test [传送门](https://github.com/InfiniteXyy/Test-Course-Projects/tree/master/chapter02)
 
-coverage test(Advanced JUnit) [传送门](https://github.com/InfiniteXyy/Test-Course-Projects/tree/master/chapter03)
+Advanced JUnit [传送门](https://github.com/InfiniteXyy/Test-Course-Projects/tree/master/chapter03)
 
 

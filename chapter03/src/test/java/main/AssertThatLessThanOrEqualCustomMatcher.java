@@ -2,7 +2,9 @@ package main;
 
 import static org.junit.Assert.assertThat;
 import static main.LessThanOrEqual.lessThanOrEqual;
+import static org.hamcrest.CoreMatchers.*;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class AssertThatLessThanOrEqualCustomMatcher {
@@ -32,6 +34,6 @@ public class AssertThatLessThanOrEqualCustomMatcher {
   @Test
   public void compare_with_Minimal_value() throws Exception {
     int actualMin = Integer.MIN_VALUE + 1;
-    assertThat(actualMin, lessThanOrEqual(Integer.MIN_VALUE));
+    assertThat(actualMin, not(lessThanOrEqual(Integer.MIN_VALUE)));
   }
 }

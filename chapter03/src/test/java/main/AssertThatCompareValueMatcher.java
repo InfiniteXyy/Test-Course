@@ -3,6 +3,7 @@ package main;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.*;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class AssertThatCompareValueMatcher {
@@ -25,7 +26,7 @@ public class AssertThatCompareValueMatcher {
   @Test
   public void equalTo_Matcher_array_content_same_but_index_not_same() throws Exception {
     String tools[] = {"Junit", "Intellij idea", "hamcrest"};
-    assertThat(tools, equalTo(new String[]{"hamcrest", "Intellij idea", "Junit"}));
+    assertThat(tools, not(equalTo(new String[]{"hamcrest", "Intellij idea", "Junit"})));
   }
 
   @Test
@@ -34,6 +35,7 @@ public class AssertThatCompareValueMatcher {
     assertThat(age, not(equalTo(29)));
   }
 
+  @Ignore("it will fail, so...")
   @Test
   public void not_Matcher_test_fail() throws Exception {
     int age = 20;

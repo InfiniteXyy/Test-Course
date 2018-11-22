@@ -1,6 +1,6 @@
 ## Junit 进阶
 
-#### Basic Assert Test 
+### Basic Assert Test 
 in [`AssertTest`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/main/AssertTest.java)
 - assertTrue / assertFalse
 - assertNull / assertNotNull
@@ -8,13 +8,13 @@ in [`AssertTest`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/ma
 - assertSame / assertNotSame
 
 
-#### Assertion with assertThat
-##### compare value matchers
+### Assertion with assertThat
+#### compare value matchers
 in [`AssertThatCompareValueMatcher`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/main/AssertThatCompareValueMatcher.java)
 - equalTo
 - not
 
-##### compound value matchers
+#### compound value matchers
 in [`AssertThatCompoundValueMatcher`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/main/AssertThatCompoundValueMatcher.java)
 
 - either
@@ -24,7 +24,7 @@ in [`AssertThatCompoundValueMatcher`](https://github.com/InfiniteXyy/Test-Course
 
 *注意：由于使用了泛型，必须保证所有 Matchers 的数据类型是一致的*
 
-##### collection matcher
+#### collection matcher
 in [`AssertThatCollectionMatcher`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/main/AssertThatCollectionMatcher.java)
 
 - hasItem/hasItems
@@ -36,7 +36,7 @@ in [`AssertThatStringMatcher`](https://github.com/InfiniteXyy/Test-Course-2018-a
 - endsWith
 - containsString
 
-##### custom matcher
+#### custom matcher
 matcher in [`LessThanOrEqual`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/main/LessThanOrEqual.java)
 
 in [`AssertThatLessThanOrEqualCustomMatcher`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/main/AssertThatLessThanOrEqualCustomMatcher.java)
@@ -90,3 +90,6 @@ use JUnitParamsRunner [`FactorialTestThree`](https://github.com/InfiniteXyy/Test
 步骤
 1. 制定参数化测试运行器
 1. 定义测试数据集合
+
+
+### Handling Exception Flow

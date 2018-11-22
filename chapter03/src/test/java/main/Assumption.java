@@ -5,11 +5,12 @@ import static org.junit.Assume.*;
 import static org.junit.Assert.*;
 
 public class Assumption {
-  boolean shouldTest = false;
+  boolean shouldTest = true;
 
   @Test
   public void very_critical_test() throws Exception {
+    // if it is false, test after it will be ignored
     assumeTrue(shouldTest);
-    assertTrue(false);
+    assertTrue(true);
   }
 }

@@ -155,3 +155,95 @@ use JUnitParamsRunner [`FactorialTestThree`](https://github.com/InfiniteXyy/Test
 - ParameterSupplier:向测试方法提供测试数据的抽象类，测试数据提供类应提供对其的具体实现。 
   - 只有一个方法需要实现 `getValueSources`
 - @ParametersSuppliedBy:标注测试方法里参数使用的测试数据提供类 
+
+
+
+### JUnit Rules
+
+#### Timeout Rule
+[`TimeoutRuleTest`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/rules/TimeoutRuleTest.java)
+
+[`TimeoutTest`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/rules/TimeoutTest.java)
+
+制定测试执行的时长
+
+- 在每个测试方法前添加 @Test(timeout) 
+- @Rule 标记全局**Timeout Rule**
+
+#### ErrorCollector Rule
+
+[`ErrorCollectorTest`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/rules/ErrorCollectorTest.java)
+
+普通的测试在遇到测试失败后就会停止，collector会运行到最后，收集所有的测试。
+
+#### Verifier Rule 
+
+[`VerifierRuleTest`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/rules/VerifierRuleTest.java)
+
+通过定义verify rule，在每个测试结束后对一些通用的部分进行测试。
+
+其中 Verifier 类实例化后的方法可以自定义规则。
+
+#### TestWatcher Rule
+
+[`TestWatcherRuleTest`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/rules/TestWatcherRuleTest.java)
+
+类似于生命周期钩子，可以收集执行测试过程中的相关信息。
+
+#### TestName Rule
+
+[`TestNameRuleTest`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/rules/TestNameRuleTest.java)
+
+在测试方法内部获得测试的方法
+
+#### ExternalResource Rule
+
+[`ExternalResourceTest`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/rules/ExternalResourceTest.java)
+
+在访问**外部资源**的时候，使用该rule，进行资源自我管理（建立链接和关闭链接）
+
+例如：需要链接测试专用数据库时，需要连接数据库。
+
+
+
+### JUnit Category
+
+[`ExternalResourceTest`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/rules/ExternalResourceTest.java)
+
+
+Categories 是一个JUnit测试运行器，是一类特殊的 Suite
+
+它按照测试方法或者测试类进行分类
+
+- 只执行在@IncludeCategory内指定的测试方法和测试类
+- @ExcludeCategory排除指定的测试方法和测试类的执行
+
+
+
+### JUnit 5
+
+#### ParameterizedTest
+
+[`FactorialTest`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/junit5/FactorialTest.java)
+
+参数化测试
+
+支持：
+
+- @ValueSource(): 一个基本类型的数组
+- EnumSource: 使用Enum常量作为数据源
+- MethodSource: 使用方法作为数据源
+- CsvSource / CsvFileSource: 使用逗号分隔符数据作为数据源
+- ArgumentsSource: 使用自定义数据源类
+
+#### RepeatedTest
+
+重复执行同一个测试函数，通常用于增加负载。
+
+#### TestFactory
+[`DynamicTestJUnit5`](https://github.com/InfiniteXyy/Test-Course-2018-autumn/blob/master/chapter03/src/test/java/junit5/DynamicTestJUnit5.java)
+
+目前仍是试验性功能
+
+可以在测试的过程中动态生成测试用例。
+

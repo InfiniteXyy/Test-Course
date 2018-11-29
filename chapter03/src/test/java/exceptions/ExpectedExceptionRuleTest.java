@@ -27,7 +27,7 @@ public class ExpectedExceptionRuleTest {
   @Test
   public void throws_IllegalStateException_With_Message() {
     thrown.expect(IllegalStateException.class);
-    thrown.expectMessage(equalTo("Hi"));
+    thrown.expectMessage(equalTo("Hi!"));
     throw new IllegalStateException("Hi!");
   }
 

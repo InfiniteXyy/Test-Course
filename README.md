@@ -6,4 +6,6 @@ coverage test [传送门](https://github.com/InfiniteXyy/Test-Course-Projects/tr
 
 Advanced JUnit [传送门](https://github.com/InfiniteXyy/Test-Course-Projects/tree/master/chapter03)
 
+Case study [传送门](https://github.com/InfiniteXyy/Test-Course-Projects/tree/master/chapter04)
+
 
